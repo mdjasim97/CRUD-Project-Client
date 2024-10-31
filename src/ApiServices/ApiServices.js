@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 
 export const Create = (productInfo) => {
-    fetch(`http://localhost:5000/createProduct`, {
+    fetch(`https://crud-project-server.vercel.app/createProduct`, {
         method: "POST",
         headers: {
             'content-Type': 'application/json'
@@ -27,14 +27,14 @@ export const Create = (productInfo) => {
 
 
 export const Read = async () => {
-    const result = await axios.get(`http://localhost:5000/readProduct`)
+    const result = await axios.get(`https://crud-project-server.vercel.app/readProduct`)
     return result
 }
 
 
 
 export const Update = (id, updateData) => {
-    axios.post(`http://localhost:5000/updateProduct/${id}`, updateData)
+    axios.post(`https://crud-project-server.vercel.app/updateProduct/${id}`, updateData)
         .then(result => {
             console.log(result.data.status);
             if (result.data.status == 'successful') {
@@ -55,7 +55,7 @@ export const Update = (id, updateData) => {
 
 
 export const Delete = (id) => {
-    axios.get(`http://localhost:5000/deleteProduct/${id}`)
+    axios.get(`https://crud-project-server.vercel.app/deleteProduct/${id}`)
         .then(result => {
             console.log(result.data.status);
             if (result.data.status == 'success') {

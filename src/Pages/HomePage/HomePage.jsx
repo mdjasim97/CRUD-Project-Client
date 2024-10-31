@@ -10,7 +10,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/readProduct`)
+      .get(`https://crud-project-server.vercel.app/readProduct`)
       .then((res) => setProducts(res?.data?.message));
   }, []);
 

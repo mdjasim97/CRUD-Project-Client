@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/updatePage/:id",
         element: <UpdatePage />,
-        loader : ({params})=>fetch(`http://localhost:5000/readProductById/${params.id}`)
+        loader : ({params})=>fetch(`https://crud-project-server.vercel.app/readProductById/${params.id}`)
       },
     ],
   },
